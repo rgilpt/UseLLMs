@@ -37,7 +37,9 @@ func _on_text_edit_text_changed() -> void:
 		
 
 
-func chat_robot(text:String, system_content=""):
+func chat_robot(text:String, system_content="answer as an expert"):
+	if system_content == "":
+		system_content = "answer as an expert"
 	var body = JSON.new().stringify(
 		{
 			"messages": [
