@@ -1,15 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://cr2wtinqafm6h"]
+[gd_scene load_steps=4 format=3 uid="uid://cr2wtinqafm6h"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_ib82d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahffh"]
 bg_color = Color(0.581273, 0.467744, 0.328081, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qx872"]
+bg_color = Color(0.352353, 0.371902, 0.367171, 1)
+
 [node name="World" type="Node2D"]
 script = ExtResource("1_ib82d")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-offset_right = 754.0
+offset_right = 1152.0
 offset_bottom = 600.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ahffh")
 
@@ -34,14 +37,52 @@ text = "System"
 custom_minimum_size = Vector2(500, 50)
 layout_mode = 2
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button1" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Story"
+
+[node name="Button2" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Quests"
+
+[node name="Button3" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Dialogs"
+
+[node name="Button4" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "DwFunctions"
+
+[node name="Button5" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "DwFunctions"
+
 [node name="TextEdit2" type="TextEdit" parent="PanelContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 editable = false
 wrap_mode = 1
 
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qx872")
+
+[node name="LStatus" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "DONE"
+
+[node name="TextEditJSON" type="TextEdit" parent="PanelContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+editable = false
+wrap_mode = 1
+
 [node name="TextEdit" type="TextEdit" parent="PanelContainer/HBoxContainer"]
-custom_minimum_size = Vector2(600, 600)
+custom_minimum_size = Vector2(588, 600)
 layout_mode = 2
 editable = false
 wrap_mode = 1
@@ -49,4 +90,9 @@ wrap_mode = 1
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
 [connection signal="text_changed" from="PanelContainer/HBoxContainer/VBoxContainer/TextEdit" to="." method="_on_text_edit_text_changed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer2/Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer2/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer2/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer2/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer2/Button5" to="." method="_on_button_5_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]
