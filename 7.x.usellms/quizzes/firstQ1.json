@@ -1,0 +1,125 @@
+
+{
+	"questions": [
+		{
+			"id": 1,
+			"text": "Quem foi o filósofo que nasceu em Estagira, no Reino de Macedônia?",
+			"answers": [
+				{"id": 1, "correct": true, "text": "Aristóteles", "explanation": ""},
+				{"id": 2, "correct": false, "text": "Sócrates"},
+				{"id": 3, "correct": false, "text": "Platão"},
+				{"id": 4, "correct": false, "text": "Heraclito"}
+			],
+			"skill": "moderate",
+			"emotion": "challenge"
+		},
+		{
+			"id": 2,
+			"text": "Quem foi o fundador da Academia em Atenas?",
+			"answers": [
+				{"id": 1, "correct": true, "text": "Platão", "explanation": ""},
+				{"id": 2, "correct": false, "text": "Aristóteles"},
+				{"id": 3, "correct": false, "text": "Sócrates"},
+				{"id": 4, "correct": false, "text": "Epicuro"}
+			],
+			"skill": "moderate",
+			"emotion": "normal"
+		},
+		{
+			"id": 3,
+			"text": "Quem foi o filósofo que desenvolveu a teoria da forma e substância?",
+			"answers": [
+				{"id": 1, "correct": true, "text": "Aristóteles", "explanation": ""},
+				{"id": 2, "correct": false, "text": "Platão"},
+				{"id": 3, "correct": false, "text": "Heraclito"},
+				{"id": 4, "correct": false, "text": "Epicuro"}
+			],
+			"skill": "hard",
+			"emotion": "sneaky"
+		},
+		{
+			"id": 4,
+			"text": "Quem foi o filósofo que escreveu 'Os Pensamentos'?",
+			"answers": [
+				{"id": 1, "correct": true, "text": "Epicuro", "explanation": ""},
+				{"id": 2, "correct": false, "text": "Sócrates"},
+				{"id": 3, "correct": false, "text": "Platão"},
+				{"id": 4, "correct": false, "text": "Aristóteles"}
+			],
+			"skill": "easy",
+			"emotion": "motivation"
+		},
+		{
+			"id": 5,
+			"text": "Quem foi o filósofo que desenvolveu a teoria da justiça distributiva?",
+			"answers": [
+				{"id": 1, "correct": true, "text": "Aristóteles", "explanation": ""},
+				{"id": 2, "correct": false, "text": "Platão"},
+				{"id": 3, "correct": false, "text": "Epicuro"},
+				{"id": 4, "correct": false, "text": "Heraclito"}
+			],
+			"skill": "moderate",
+			"emotion": "challenge"
+		},
+		{
+			"id": 6,
+			"text": "Quem foi o filósofo que desenvolveu a teoria da alma?",
+			"answers": [
+				{"id": 1, "correct": true, "text": "Platão", "explanation": ""},
+				{"id": 2, "correct": false, "text": "Aristóteles"},
+				{"id": 3, "correct": false, "text": "Epicuro"},
+				{"id": 4, "correct": false, "text": "Heraclito"}
+			],
+			"skill": "hard",
+			"emotion": "sneaky"
+		},
+		{
+			"id": 7,
+			"text": "Quem foi o filósofo que desenvolveu a teoria da virtude?",
+			"answers": [
+				{"id": 1, "correct": true, "text": "Aristóteles", "explanation": ""},
+				{"id": 2, "correct": false, "text": "Platão"},
+				{"id": 3, "correct": false, "text": "Epicuro"},
+				{"id": 4, "correct": false, "text": "Heraclito"}
+			],
+			"skill": "moderate",
+			"emotion": "challenge"
+		},
+		{
+			"id": 8,
+			"text": "Quem foi o filósofo que escreveu 'Os Diálogos'?",
+			"answers": [
+				{"id": 1, "correct": true, "text": "Platão", "explanation": ""},
+				{"id": 2, "correct": false, "text": "Aristóteles"},
+				{"id": 3, "correct": false, "text": "Sócrates"},
+				{"id": 4, "correct": false, "text": "Epicuro"}
+			],
+			"skill": "easy",
+			"emotion": "motivation"
+		},
+		{
+			"id": 9,
+			"text": "Quem foi o filósofo que desenvolveu a teoria da causalidade?",
+			"answers": [
+				{"id": 1, "correct": true, "text": "Aristóteles", "explanation": ""},
+				{"id": 2, "correct": false, "text": "Platão"},
+				{"id": 3, "correct": false, "text": "Epicuro"},
+				{"id": 4, "correct": false, "text": "Heraclito"}
+			],
+			"skill": "hard",
+			"emotion": "sneaky"
+		},
+		{
+			"id": 10,
+			"text": "Quem foi o filósofo que desenvolveu a teoria da justiça redistributiva?",
+			"answers": [
+				{"id": 1, "correct": true, "text": "Aristóteles", "explanation": ""},
+				{"id": 2, "correct": false, "text": "Platão"},
+				{"id": 3, "correct": false, "text": "Epicuro"},
+				{"id": 4, "correct": false, "text": "Heraclito"}
+			],
+			"skill": "moderate",
+			"emotion": "challenge"
+		}
+	]
+}

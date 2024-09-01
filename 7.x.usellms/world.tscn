@@ -58,7 +58,7 @@ text = "DwFunctions"
 
 [node name="Button5" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-text = "DwFunctions"
+text = "Quizzes"
 
 [node name="TextEdit2" type="TextEdit" parent="PanelContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 200)

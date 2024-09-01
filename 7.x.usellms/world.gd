@@ -12,7 +12,7 @@ extends Node2D
 @onready var text_edit_json: TextEdit = $PanelContainer/HBoxContainer/VBoxContainer/TextEditJSON
 
 var json_output = false
-
+var max_tokens = -1
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -35,8 +35,15 @@ func _on_http_request_request_completed(result: int, response_code: int, headers
 	text_edit_history.text += "Robot: " + text_edit_2.text + "\n"
 	
 	if json_output:
-		var new_json = response["choices"][0]["message"]["content"].split("```")[1]
-		text_edit_json.set_text(new_json)
+		var json_content = response["choices"][0]["message"]["content"]
+		if json_content.contains("```"):
+			var new_json = json_content.split("```")[1]
+			
+			if new_json.contains("json"):
+				new_json = new_json.split("json")[1]
+			text_edit_json.set_text(new_json)
+		else:
+			text_edit_json.set_text(json_content)
 		
 
 func _on_text_edit_text_changed() -> void:
@@ -60,8 +67,9 @@ func chat_robot(text:String, system_content="answer as an expert"):
 			"messages": [
 				{"role": "system", "content": system_content},
 				{"role": "user", "content": text },
-			]
-		 
+				
+			],
+			"max_tokens": max_tokens
 		})
 
 	var error = http_request.request("http://localhost:1234/v1/chat/completions", ["Content-Type: application/json"], HTTPClient.METHOD_POST, body)
@@ -79,6 +87,7 @@ conditions have "state" boolean attribute and can be linked with characters, ite
 decisions are applied only to the player.
 events have id, name, links. The events can be triggered by conditions or decisions and uses links to connect'
 	json_output = true
+	max_tokens = -1
 
 
 func _on_button_2_pressed() -> void:
@@ -96,6 +105,7 @@ the actions is list of action object
 action object can be: bring , explore, attack, kill, ask, trade, discover, craft, socialize
 '
 	json_output = true
+	max_tokens = -1
 	
 func _on_button_3_pressed() -> void:
 	### Dialogue
@@ -109,6 +119,7 @@ conversations is a list of dialogue that have "target_id" that is the character 
 response_options have an "id" and "text"
 '
 	json_output = true
+	max_tokens = -1
 
 func _on_button_4_pressed() -> void:
 	### Dialogue with functions
@@ -123,7 +134,17 @@ response_options have an "id", "text" and "function"
 function can be: "improve_relation", "disimprove_relation", "action", "reward", "decline_task", "ask_about_reward"
 '
 	json_output = true
+	max_tokens = -1
 
 func _on_button_5_pressed() -> void:
-	text_edit_system.text =''
-	json_output = false
+	text_edit_system.text ='as an educator create a quiz for the students , write in json format 
+use the main key: "questions"
+The questions have integer "id", "text", "answers", "skill" and "emotion" that can instil motivation, challenge, normal or sneaky.  
+The answers are a list of objects between 2 and a maximum of 5  and have integer "id", "correct" that is true or false, "text" and if possible, add "explanation" field to give extra feedback or explanaitions about the correct answer.
+Skill have 3 levels: easy, moderate and hard.
+Create the json only refering to the questions and answers. 
+'
+#No explanation, no HTML, no javascript.
+#Maximum of 5000 tokens.
+	json_output = true
+	max_tokens = 5000
